@@ -428,6 +428,9 @@ def save_id_admin(message):
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "2 : Add User")
 def type_of_user(message):
     userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return
     keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
     keyboard.row_width = 4
     item1 = types.KeyboardButton(text="Test")
