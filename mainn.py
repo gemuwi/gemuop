@@ -566,6 +566,10 @@ def create_lifetime_user(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "3 : Delete Admin")
 def delete_admin(message):
+    userid = message.from_user.id
+    xdlist = [5433600338]
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter userid: ")
     bot.register_next_step_handler(send, delete_id_admin)
 
@@ -580,6 +584,10 @@ def delete_id_admin(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "4 : Delete User")
 def delete_user(message):
+    userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter userid: ")
     bot.register_next_step_handler(send, delete_id_user)
 
