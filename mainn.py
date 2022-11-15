@@ -374,6 +374,10 @@ def usecase1(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "Admin Mode")
 def usecase2(message):
+    userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return bot.send_message(message.chat.id, "You ain't an admin of this bot!", parse_mode='Markdown')
     send1 = bot.send_message(message.chat.id, "Hey Admin  \n*Type “Ok” to continue*", parse_mode='Markdown')
     bot.register_next_step_handler(send1, adminfunction)
 
@@ -412,6 +416,10 @@ def edit_access(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "1 : Add Admin")
 def add_admin(message):
+    userid = message.from_user.id
+    xdlist = [5433600338]
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter UserID: ")
     bot.register_next_step_handler(send, save_id_admin)
 
@@ -447,6 +455,10 @@ def type_of_user(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "Test")
 def add_user(message):
+    userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter UserID: ")
     bot.register_next_step_handler(send, createtest_user)
 
@@ -468,6 +480,10 @@ def createtest_user(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "7 days")
 def add_user(message):
+    userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter UserID: ")
     bot.register_next_step_handler(send, create7days_user)
 
@@ -486,6 +502,10 @@ def create7days_user(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "1 month")
 def add_user(message):
+    userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter UserID: ")
     bot.register_next_step_handler(send, create1month_user)
 
@@ -504,6 +524,10 @@ def create1month_user(message):
 
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "3 months")
 def add_user(message):
+    userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter UserID: ")
     bot.register_next_step_handler(send, create3months_user)
 
@@ -521,6 +545,10 @@ def create3months_user(message):
         return ''
 @bot.message_handler(content_types=["text"], func=lambda message: message.text == "Lifetime")
 def add_user(message):
+    userid = message.from_user.id
+    xdlist = adminid_fetcher()
+    if userid not in xdlist:
+        return
     send = bot.send_message(message.chat.id, "Enter UserID: ")
     bot.register_next_step_handler(send, create_user_lifetime)
 
